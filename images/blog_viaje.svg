@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fff7ed"/>
+      <stop offset="100%" stop-color="#fef9ee"/>
+    </linearGradient>
+    <linearGradient id="shieldG" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bgGrad)"/>
+
+  <!-- Decorative circles -->
+  <circle cx="50" cy="50" r="70" fill="#f97316" opacity="0.07"/>
+  <circle cx="750" cy="450" r="90" fill="#10b981" opacity="0.08"/>
+
+  <!-- House illustration (center-left) -->
+  <rect x="80" y="230" width="240" height="200" rx="6" fill="#ffffff" opacity="0.95"/>
+  <polygon points="80,230 200,130 320,230" fill="#f97316" opacity="0.9"/>
+  <!-- Roof accent -->
+  <polygon points="110,230 200,140 290,230" fill="#ea580c" opacity="0.15"/>
+  <!-- Door -->
+  <rect x="163" y="340" width="74" height="90" rx="5" fill="#0ea5e9" opacity="0.85"/>
+  <circle cx="200" cy="385" r="5" fill="white"/>
+  <!-- Windows -->
+  <rect x="98" y="270" width="65" height="52" rx="3" fill="#bae6fd" opacity="0.9"/>
+  <line x1="130" y1="270" x2="130" y2="322" stroke="#7dd3fc" stroke-width="2"/>
+  <line x1="98" y1="296" x2="163" y2="296" stroke="#7dd3fc" stroke-width="2"/>
+  <rect x="233" y="270" width="65" height="52" rx="3" fill="#bae6fd" opacity="0.9"/>
+  <line x1="265" y1="270" x2="265" y2="322" stroke="#7dd3fc" stroke-width="2"/>
+  <line x1="233" y1="296" x2="298" y2="296" stroke="#7dd3fc" stroke-width="2"/>
+  <!-- Small security cam -->
+  <rect x="300" y="234" width="26" height="14" rx="3" fill="#334155"/>
+  <circle cx="308" cy="241" r="5" fill="#1e293b"/>
+  <circle cx="320" cy="236" r="4" fill="#10b981"/>
+
+  <!-- Suitcase (right side) -->
+  <rect x="450" y="200" width="160" height="130" rx="14" fill="#f97316" opacity="0.92"/>
+  <rect x="498" y="182" width="64" height="28" rx="8" fill="#ea580c"/>
+  <!-- Handle detail -->
+  <rect x="510" y="186" width="40" height="14" rx="6" fill="none" stroke="#ea580c" stroke-width="3"/>
+  <line x1="450" y1="265" x2="610" y2="265" stroke="#ea580c" stroke-width="4"/>
+  <!-- Suitcase wheels -->
+  <circle cx="475" cy="337" r="10" fill="#ea580c" opacity="0.7"/>
+  <circle cx="585" cy="337" r="10" fill="#ea580c" opacity="0.7"/>
+  <!-- Suitcase sticker: lock -->
+  <rect x="516" y="292" width="28" height="22" rx="4" fill="#fff" opacity="0.7"/>
+  <path d="M520 292 Q530 280 540 292" fill="none" stroke="#fff" stroke-width="3"/>
+
+  <!-- Big shield (overlapping center) -->
+  <path d="M390 120 L450 142 L450 210 Q450 248 390 265 Q330 248 330 210 L330 142 Z" fill="url(#shieldG)" opacity="0.95"/>
+  <!-- Checkmark -->
+  <polyline points="350 190 382 218 432 162" fill="none" stroke="white" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Person silhouette (mid-right) -->
+  <circle cx="650" cy="240" r="34" fill="#fde68a"/>
+  <!-- Hair -->
+  <ellipse cx="650" cy="218" rx="36" ry="20" fill="#92400e" opacity="0.75"/>
+  <rect x="624" y="274" width="52" height="90" rx="12" fill="#0ea5e9"/>
+  <line x1="635" y1="364" x2="625" y2="420" stroke="#1e293b" stroke-width="11" stroke-linecap="round"/>
+  <line x1="660" y1="364" x2="670" y2="420" stroke="#1e293b" stroke-width="11" stroke-linecap="round"/>
+  <!-- Smile -->
+  <path d="M637 252 Q650 263 663 252" fill="none" stroke="#92400e" stroke-width="3" stroke-linecap="round"/>
+  <!-- Eyes -->
+  <circle cx="641" cy="237" r="3.5" fill="#1e293b"/>
+  <circle cx="659" cy="237" r="3.5" fill="#1e293b"/>
+  <!-- Thumbs up arm -->
+  <line x1="624" y1="300" x2="575" y2="280" stroke="#fde68a" stroke-width="12" stroke-linecap="round"/>
+  <ellipse cx="570" cy="275" rx="14" ry="18" fill="#fde68a"/>
+  <rect x="556" y="257" width="28" height="36" rx="8" fill="#fde68a"/>
+  <!-- Thumb detail -->
+  <path d="M556 270 Q548 268 548 277 Q548 284 556 285" fill="none" stroke="#f59e0b" stroke-width="3"/>
+
+  <!-- Trust badge bottom -->
+  <rect x="140" y="445" width="520" height="42" rx="12" fill="white" opacity="0.9"/>
+  <text x="400" y="462" text-anchor="middle" font-family="Arial,sans-serif" font-size="13" fill="#10b981" font-weight="700">🛡 Tu casa protegida mientras viajás</text>
+  <text x="400" y="479" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" fill="#475569">Segnec monitorea tu hogar las 24 horas, los 365 días del año</text>
+</svg>

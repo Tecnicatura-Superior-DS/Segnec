@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="bg3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f0fdf4"/>
+      <stop offset="100%" stop-color="#fef9c3"/>
+    </linearGradient>
+    <radialGradient id="sunG" cx="80%" cy="15%" r="30%">
+      <stop offset="0%" stop-color="#fbbf24" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#fbbf24" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg3)"/>
+  <rect width="800" height="500" fill="url(#sunG)"/>
+
+  <!-- Floor -->
+  <rect x="0" y="390" width="800" height="110" rx="0" fill="#f0fdf4" opacity="0.6"/>
+  <ellipse cx="400" cy="420" rx="380" ry="40" fill="#d1fae5" opacity="0.5"/>
+
+  <!-- Couch -->
+  <rect x="80" y="300" width="360" height="120" rx="20" fill="#10b981" opacity="0.9"/>
+  <rect x="65" y="278" width="55" height="150" rx="14" fill="#059669"/>
+  <rect x="380" y="278" width="55" height="150" rx="14" fill="#059669"/>
+  <!-- Cushions -->
+  <rect x="95" y="300" width="120" height="80" rx="12" fill="#34d399" opacity="0.8"/>
+  <rect x="225" y="300" width="120" height="80" rx="12" fill="#34d399" opacity="0.8"/>
+
+  <!-- Dog on couch (center) -->
+  <!-- Body -->
+  <ellipse cx="300" cy="292" rx="90" ry="55" fill="#fbbf24" opacity="0.95"/>
+  <!-- Head -->
+  <circle cx="380" cy="265" r="52" fill="#fbbf24" opacity="0.95"/>
+  <!-- Ears -->
+  <ellipse cx="355" cy="228" rx="20" ry="32" fill="#f59e0b" transform="rotate(-15 355 228)"/>
+  <ellipse cx="408" cy="226" rx="20" ry="32" fill="#f59e0b" transform="rotate(15 408 226)"/>
+  <!-- Inner ears -->
+  <ellipse cx="356" cy="233" rx="10" ry="18" fill="#fca5a5" opacity="0.6" transform="rotate(-15 356 233)"/>
+  <ellipse cx="407" cy="231" rx="10" ry="18" fill="#fca5a5" opacity="0.6" transform="rotate(15 407 231)"/>
+  <!-- Eyes (happy, squinting) -->
+  <path d="M362 258 Q372 251 382 258" fill="none" stroke="#1e293b" stroke-width="4" stroke-linecap="round"/>
+  <path d="M390 258 Q400 251 410 258" fill="none" stroke="#1e293b" stroke-width="4" stroke-linecap="round"/>
+  <!-- Nose -->
+  <ellipse cx="386" cy="278" rx="11" ry="8" fill="#ef4444" opacity="0.85"/>
+  <!-- Nostrils -->
+  <circle cx="381" cy="280" r="2.5" fill="#b91c1c"/>
+  <circle cx="392" cy="280" r="2.5" fill="#b91c1c"/>
+  <!-- Smile / tongue -->
+  <path d="M372 288 Q386 300 400 288" fill="none" stroke="#1e293b" stroke-width="3" stroke-linecap="round"/>
+  <ellipse cx="386" cy="297" rx="14" ry="10" fill="#f87171" opacity="0.9"/>
+  <!-- Tail -->
+  <path d="M215 290 Q170 250 190 210" fill="none" stroke="#fbbf24" stroke-width="18" stroke-linecap="round" opacity="0.95"/>
+  <!-- Paws front -->
+  <ellipse cx="290" cy="335" rx="22" ry="14" fill="#f59e0b" opacity="0.9"/>
+  <ellipse cx="340" cy="338" rx="22" ry="14" fill="#f59e0b" opacity="0.9"/>
+  <!-- Paw toes -->
+  <circle cx="282" cy="342" r="5" fill="#ea580c" opacity="0.5"/>
+  <circle cx="293" cy="345" r="5" fill="#ea580c" opacity="0.5"/>
+  <circle cx="304" cy="342" r="5" fill="#ea580c" opacity="0.5"/>
+
+  <!-- Security camera watching from shelf -->
+  <!-- Shelf -->
+  <rect x="490" y="200" width="200" height="14" rx="4" fill="#334155"/>
+  <!-- Camera body -->
+  <rect x="530" y="170" width="80" height="44" rx="8" fill="#1e293b"/>
+  <!-- Lens -->
+  <circle cx="552" cy="192" r="16" fill="#0f172a"/>
+  <circle cx="552" cy="192" r="10" fill="#0ea5e9" opacity="0.8"/>
+  <circle cx="548" cy="188" r="4" fill="white" opacity="0.4"/>
+  <!-- Green active LED -->
+  <circle cx="595" cy="175" r="7" fill="#10b981"/>
+  <!-- LED glow -->
+  <circle cx="595" cy="175" r="12" fill="#10b981" opacity="0.25"/>
+  <!-- Camera mount -->
+  <rect x="578" y="214" width="8" height="20" rx="2" fill="#334155"/>
+
+  <!-- Phone showing dog feed -->
+  <rect x="600" y="270" width="130" height="220" rx="18" fill="#1e293b" opacity="0.96"/>
+  <rect x="612" y="286" width="106" height="188" rx="12" fill="#0f172a"/>
+  <!-- Dog feed on phone -->
+  <rect x="618" y="292" width="94" height="70" rx="6" fill="#1e3a5f"/>
+  <!-- Small dog on screen -->
+  <circle cx="652" cy="320" r="18" fill="#fbbf24" opacity="0.9"/>
+  <ellipse cx="662" cy="310" rx="8" ry="12" fill="#f59e0b" opacity="0.8" transform="rotate(10 662 310)"/>
+  <path d="M643 322 Q652 330 661 322" fill="none" stroke="#1e293b" stroke-width="2"/>
+  <!-- Live badge on phone screen -->
+  <rect x="618" y="366" width="94" height="22" rx="6" fill="#ef4444" opacity="0.9"/>
+  <text x="665" y="382" text-anchor="middle" font-family="Arial,sans-serif" font-size="11" fill="white" font-weight="bold">⏺ EN VIVO</text>
+  <!-- Alert message -->
+  <rect x="618" y="396" width="94" height="36" rx="6" fill="#10b981" opacity="0.2"/>
+  <text x="665" y="410" text-anchor="middle" font-family="Arial,sans-serif" font-size="9" fill="#10b981" font-weight="700">💚 SEGNEC</text>
+  <text x="665" y="424" text-anchor="middle" font-family="Arial,sans-serif" font-size="9" fill="#6ee7b7">Tu mascota está bien</text>
+  <!-- Chat bubble on phone -->
+  <rect x="618" y="440" width="94" height="24" rx="6" fill="#0ea5e9" opacity="0.15"/>
+  <text x="665" y="456" text-anchor="middle" font-family="Arial,sans-serif" font-size="9" fill="#0284c7">¡Hola Firulais! 🐾</text>
+
+  <!-- Paw prints on floor -->
+  <circle cx="80" cy="440" r="8" fill="#fbbf24" opacity="0.35"/>
+  <circle cx="110" cy="420" r="6" fill="#fbbf24" opacity="0.3"/>
+  <circle cx="128" cy="445" r="6" fill="#fbbf24" opacity="0.3"/>
+  <circle cx="500" cy="450" r="7" fill="#fbbf24" opacity="0.3"/>
+  <circle cx="525" cy="432" r="5" fill="#fbbf24" opacity="0.25"/>
+
+  <!-- Trust badge -->
+  <rect x="80" y="445" width="360" height="42" rx="12" fill="white" opacity="0.93"/>
+  <text x="260" y="462" text-anchor="middle" font-family="Arial,sans-serif" font-size="13" fill="#10b981" font-weight="700">🐾 Tus mascotas felices, vos tranquilo</text>
+  <text x="260" y="480" text-anchor="middle" font-family="Arial,sans-serif" font-size="11" fill="#475569">Audio bidireccional · Alertas instantáneas · 24/7</text>
+</svg>

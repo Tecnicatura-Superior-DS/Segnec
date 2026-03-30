@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#e0f2fe"/>
+      <stop offset="100%" stop-color="#f0fdf4"/>
+    </linearGradient>
+    <linearGradient id="phoneGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1e40af"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg2)"/>
+
+  <!-- Deco circles -->
+  <circle cx="740" cy="60" r="80" fill="#0ea5e9" opacity="0.08"/>
+  <circle cx="60" cy="430" r="70" fill="#10b981" opacity="0.08"/>
+
+  <!-- Sofa (person sitting) -->
+  <rect x="30" y="310" width="300" height="130" rx="20" fill="#0ea5e9" opacity="0.85"/>
+  <rect x="15" y="290" width="50" height="160" rx="12" fill="#0284c7"/>
+  <rect x="265" y="290" width="50" height="160" rx="12" fill="#0284c7"/>
+  <!-- Sofa cushions -->
+  <rect x="55" y="310" width="100" height="80" rx="10" fill="#38bdf8" opacity="0.7"/>
+  <rect x="165" y="310" width="100" height="80" rx="10" fill="#38bdf8" opacity="0.7"/>
+
+  <!-- Person on sofa -->
+  <!-- Head -->
+  <circle cx="180" cy="265" r="36" fill="#fde68a"/>
+  <!-- Hair -->
+  <ellipse cx="180" cy="242" rx="38" ry="20" fill="#1e293b" opacity="0.8"/>
+  <!-- Body -->
+  <rect x="154" y="301" width="52" height="66" rx="10" fill="#10b981"/>
+  <!-- Arm holding phone -->
+  <line x1="154" y1="320" x2="100" y2="310" stroke="#fde68a" stroke-width="14" stroke-linecap="round"/>
+  <!-- Smile -->
+  <path d="M167 276 Q180 288 193 276" fill="none" stroke="#92400e" stroke-width="3" stroke-linecap="round"/>
+  <!-- Eyes (happy/squinting) -->
+  <path d="M167 261 Q172 256 177 261" fill="none" stroke="#1e293b" stroke-width="3"/>
+  <path d="M183 261 Q188 256 193 261" fill="none" stroke="#1e293b" stroke-width="3"/>
+
+  <!-- Big smartphone (center) -->
+  <rect x="290" y="80" width="220" height="380" rx="28" fill="url(#phoneGrad)" opacity="0.97"/>
+  <!-- Phone screen -->
+  <rect x="306" y="106" width="188" height="328" rx="18" fill="#0f172a"/>
+  <!-- Camera app UI on screen -->
+  <rect x="318" y="120" width="164" height="120" rx="10" fill="#0ea5e9" opacity="0.4"/>
+  <!-- Live camera room scene in phone -->
+  <!-- Back wall -->
+  <rect x="322" y="124" width="156" height="112" rx="8" fill="#1e3a5f"/>
+  <!-- Room floor -->
+  <polygon points="322,214 478,214 478,236 322,236" fill="#1e2d40"/>
+  <!-- Shelf -->
+  <rect x="340" y="148" width="100" height="8" rx="2" fill="#334155"/>
+  <!-- Camera icon on shelf -->
+  <rect x="360" y="132" width="60" height="14" rx="4" fill="#475569"/>
+  <circle cx="375" cy="139" r="6" fill="#0ea5e9" opacity="0.9"/>
+  <!-- Green recording indicator -->
+  <circle cx="410" cy="133" r="4" fill="#10b981"/>
+  <!-- Plant on shelf -->
+  <rect x="430" y="140" width="6" height="16" rx="2" fill="#92400e"/>
+  <ellipse cx="433" cy="138" rx="12" ry="10" fill="#10b981" opacity="0.9"/>
+
+  <!-- Status bar on phone -->
+  <rect x="316" y="252" width="168" height="28" rx="6" fill="#10b981" opacity="0.9"/>
+  <text x="400" y="271" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" fill="white" font-weight="bold">🔴 EN VIVO · Todo tranquilo</text>
+
+  <!-- Notification cards on phone -->
+  <rect x="316" y="292" width="168" height="44" rx="8" fill="#0f2744"/>
+  <text x="328" y="308" font-family="Arial,sans-serif" font-size="10" fill="#7dd3fc" font-weight="700">SEGNEC ALERT</text>
+  <text x="328" y="326" font-family="Arial,sans-serif" font-size="11" fill="white">✔ Sin movimiento inusual</text>
+
+  <rect x="316" y="344" width="168" height="44" rx="8" fill="#0f2744"/>
+  <text x="328" y="360" font-family="Arial,sans-serif" font-size="10" fill="#6ee7b7" font-weight="700">CÁMARA PRINCIPAL</text>
+  <text x="328" y="378" font-family="Arial,sans-serif" font-size="11" fill="white">📡 Conexión estable · HD</text>
+
+  <!-- WiFi waves (big, right side) -->
+  <path d="M590 200 Q660 150 730 200" fill="none" stroke="#0ea5e9" stroke-width="7" stroke-linecap="round" opacity="0.5"/>
+  <path d="M605 225 Q657 190 710 225" fill="none" stroke="#0ea5e9" stroke-width="6" stroke-linecap="round" opacity="0.65"/>
+  <path d="M620 250 Q657 228 694 250" fill="none" stroke="#0ea5e9" stroke-width="5" stroke-linecap="round" opacity="0.8"/>
+  <circle cx="657" cy="272" r="11" fill="#0ea5e9" opacity="0.9"/>
+
+  <!-- Trust badge -->
+  <rect x="530" y="320" width="240" height="70" rx="14" fill="white" opacity="0.95"/>
+  <text x="650" y="343" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" fill="#0284c7" font-weight="700">📱 Control total desde tu celular</text>
+  <text x="650" y="362" text-anchor="middle" font-family="Arial,sans-serif" font-size="11" fill="#475569">Visualizá tus cámaras en tiempo real</text>
+  <text x="650" y="380" text-anchor="middle" font-family="Arial,sans-serif" font-size="11" fill="#475569">sin importar dónde estés</text>
+</svg>
