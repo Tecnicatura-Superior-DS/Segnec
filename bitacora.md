@@ -49,7 +49,19 @@ Este documento registrará los cambios y avances en la creación de la página w
 
 ### Pendientes:
 - [ ] El cliente debe proveer: logo real, teléfono real, email real, zona de cobertura exacta.
-- [ ] Reemplazar imágenes SVG placeholder por fotos reales o generadas con IA (cuando se restaure la cuota).
+- [x] Reemplazar imágenes SVG placeholder por fotos reales o generadas con IA (cuando se restaure la cuota).
 - [ ] Agregar videos en la carpeta `videos/` (ej: video testimonial, instalación en tiempo real).
-- [ ] Validar el número de WhatsApp real antes de publicar.
-- [ ] Integrar con Git y subir al servidor de producción (segnec.com.ar).
+- [x] Validar el número de WhatsApp real antes de publicar.
+- [x] Integrar con Git y subir al servidor de producción (segnec.com.ar).
+
+---
+
+## Lanzamiento y SSL
+- **Fecha:** 30 de marzo de 2026
+- **Actividad:** Verificación de propagación, despliegue final y configuración SSL.
+- **Detalles:**
+  - Se verificó que `segnec.com.ar` apunta correctamente a la IP `138.204.160.54`.
+  - Se realizó el `git push origin main` que activó el hook de despliegue automático.
+  - Se configuró el certificado SSL mediante Certbot, habilitando HTTPS con redirección automática desde HTTP.
+  - Se verificó la correcta visualización de la Propuesta 2 en entornos seguros.
+- **Estado:** SITIO WEB ONLINE Y SEGURO (HTTPS). 🚀
