@@ -81,14 +81,14 @@ ul { list-style: none; }
     width: 240px; /* Reserved width */
 }
 .logo-img { 
-    height: 145px; 
+    height: 200px; 
     width: auto; 
     filter: drop-shadow(0 4px 8px rgba(0,0,0,0.12));
     transition: transform var(--transition);
     display: block;
     object-fit: contain;
     position: absolute;
-    top: -35px; /* Adjusting top offset for larger height */
+    top: -65px; /* Adjusting top offset for much larger height */
     left: 0;
 }
 .logo-img:hover { transform: scale(1.05); }
@@ -773,7 +773,7 @@ footer {
     .mobile-menu-btn { display: none; } /* Hide hamburger */
     .mobile-bottom-nav { display: flex; }
 
-    .logo-img { height: 100px; top: -20px; }
+    .logo-img { height: 140px; top: -45px; }
     
     .hero { min-height: 60vh; padding: 60px 0 40px; }
     .hero-title { font-size: 34px; line-height: 1.2; text-shadow: 0 1px 5px rgba(255,255,255,0.8); }
