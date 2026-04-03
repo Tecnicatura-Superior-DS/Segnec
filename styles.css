@@ -62,7 +62,7 @@ ul { list-style: none; }
     background: rgba(255,255,255,.95);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    padding: 8px 0;
+    padding: 0; /* Remove padding to let the logo define the height */
     position: sticky;
     top: 0;
     z-index: 200;
@@ -75,14 +75,15 @@ ul { list-style: none; }
 
 .logo-link { display: flex; align-items: center; }
 .logo-img { 
-    height: 90px; 
+    height: 140px; 
     width: auto; 
-    filter: drop-shadow(0 2px 5px rgba(0,0,0,0.12));
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.15));
     transition: transform var(--transition);
     display: block;
     object-fit: contain;
+    padding: 10px 0; /* Minimal padding for the logo itself */
 }
-.logo-img:hover { transform: scale(1.05); }
+.logo-img:hover { transform: scale(1.02); }
 
 .nav-links {
     display: flex;
@@ -636,9 +637,9 @@ footer {
     border-bottom: 1px solid rgba(255,255,255,.08);
 }
 .footer-logo-img { 
-    height: 100px; 
+    height: 150px; 
     width: auto; 
-    margin-bottom: 15px; 
+    margin-bottom: 20px; 
     filter: brightness(0) invert(1); 
     opacity: 1; 
     object-fit: contain;
@@ -764,7 +765,7 @@ footer {
     .mobile-menu-btn { display: none; } /* Hide hamburger */
     .mobile-bottom-nav { display: flex; }
 
-    .logo-img { height: 75px; }
+    .logo-img { height: 95px; }
     
     .hero { min-height: 60vh; padding: 60px 0 40px; }
     .hero-title { font-size: 34px; line-height: 1.2; text-shadow: 0 1px 5px rgba(255,255,255,0.8); }
