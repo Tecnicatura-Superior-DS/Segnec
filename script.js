@@ -12,39 +12,9 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
 
-    /* ─── Mobile menu toggle ─── */
-    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-    const mobileMenu    = document.getElementById('mobileMenu');
-    const iconOpen      = document.getElementById('icon-open');
-    const iconClose     = document.getElementById('icon-close');
-
-    const toggleMenu = (forceClose = false) => {
-        const isOpen = mobileMenu.classList.contains('open');
-        if (forceClose || isOpen) {
-            mobileMenu.classList.remove('open');
-            mobileMenuBtn.setAttribute('aria-expanded', 'false');
-            mobileMenu.setAttribute('aria-hidden', 'true');
-            iconOpen.style.display  = '';
-            iconClose.style.display = 'none';
-        } else {
-            mobileMenu.classList.add('open');
-            mobileMenuBtn.setAttribute('aria-expanded', 'true');
-            mobileMenu.setAttribute('aria-hidden', 'false');
-            iconOpen.style.display  = 'none';
-            iconClose.style.display = '';
-        }
-    };
-
-    mobileMenuBtn.addEventListener('click', () => toggleMenu());
-
-    // Close on mobile link click
-    document.querySelectorAll('.mobile-link').forEach(link => {
-        link.addEventListener('click', () => toggleMenu(true));
-    });
-
     /* ─── Active nav link on scroll ─── */
     const sections  = document.querySelectorAll('section[id]');
-    const navLinks  = document.querySelectorAll('.nav-links a');
+    const navLinks  = document.querySelectorAll('.nav-links a, .mobile-bottom-nav .nav-item');
     const observer  = new IntersectionObserver(entries => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
