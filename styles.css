@@ -62,7 +62,7 @@ ul { list-style: none; }
     background: rgba(255,255,255,.98);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    padding: 10px 0;
+    padding: 15px 0; /* Increased for a more substantial feel */
     position: sticky;
     top: 0;
     z-index: 300;
@@ -77,8 +77,8 @@ ul { list-style: none; }
     display: flex; 
     align-items: center; 
     position: relative;
-    height: 50px; /* Base height for header content */
-    width: 240px; /* Reserved width */
+    height: 58px; /* Increased base height for header (approx 15%) */
+    width: 280px; /* Synchronized with larger logo */
 }
 .logo-img { 
     height: 200px; 
@@ -645,9 +645,9 @@ footer {
     border-bottom: 1px solid rgba(255,255,255,.08);
 }
 .footer-logo-img { 
-    height: 120px; 
+    height: 200px; 
     width: auto; 
-    margin-bottom: 20px; 
+    margin-bottom: 25px; 
     filter: brightness(0) invert(1); 
     opacity: 1; 
     object-fit: contain;
