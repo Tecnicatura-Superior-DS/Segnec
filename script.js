@@ -47,23 +47,50 @@ document.addEventListener('DOMContentLoaded', () => {
         animateOnScroll.observe(el);
     });
 
-    /* ─── Contact form: basic UX feedback ─── */
+    /* ─── Contact form: actual submission via PHP ─── */
     const form = document.getElementById('contactForm');
     if (form) {
-        form.addEventListener('submit', e => {
+        form.addEventListener('submit', async e => {
             e.preventDefault();
             const btn = document.getElementById('submit-form-btn');
-            btn.textContent = '✅ ¡Mensaje enviado!';
-            btn.style.background = 'var(--green)';
+            const originalText = btn.innerHTML;
+            
+            // UI Feedback: Sending...
             btn.disabled = true;
+            btn.innerHTML = 'Enviando...';
 
-            // Reset after 4s (simulated)
-            setTimeout(() => {
-                btn.textContent = 'Enviar consulta';
-                btn.style.background = '';
-                btn.disabled = false;
-                form.reset();
-            }, 4000);
+            const formData = new FormData(form);
+
+            try {
+                const response = await fetch('contacto.php', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const result = await response.json();
+
+                if (result.status === 'success') {
+                    // Success UI
+                    btn.textContent = '✅ ¡Mensaje enviado!';
+                    btn.style.background = 'var(--green)';
+                    form.reset();
+                } else {
+                    // Error from server
+                    throw new Error(result.message || 'Error en el servidor');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                btn.textContent = '❌ Reintentar';
+                btn.style.background = 'var(--error, #f44336)';
+                alert('Hubo un error al enviar tu consulta. Por favor, intentá nuevamente o contactanos directamente por WhatsApp.');
+            } finally {
+                // Reset button after 5 seconds
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                    btn.style.background = '';
+                    btn.disabled = false;
+                }, 5000);
+            }
         });
     }
 
