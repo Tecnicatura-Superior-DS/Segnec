@@ -65,3 +65,15 @@ Este documento registrará los cambios y avances en la creación de la página w
   - Se configuró el certificado SSL mediante Certbot, habilitando HTTPS con redirección automática desde HTTP.
   - Se verificó la correcta visualización de la Propuesta 2 en entornos seguros.
 - **Estado:** SITIO WEB ONLINE Y SEGURO (HTTPS). 🚀
+
+---
+
+## Reparación de Interferencia con Nextcloud y SSL
+- **Fecha:** 17 de abril de 2026
+- **Actividad:** Corrección de la configuración de Nginx para separar el tráfico entre la web y Nextcloud.
+- **Cambios realizados:**
+  - Se activó el bloque de servidor en el puerto 443 (HTTPS) para `segnec.com.ar`.
+  - Se implementó la redirección automática 301 de HTTP a HTTPS.
+  - Se aplicó un bloque "quirúrgico" para el procesamiento de PHP únicamente en `contacto.php`, garantizando el funcionamiento del formulario sin afectar el backend de Nextcloud.
+  - Se verificó que el redireccionamiento de puertos en el router apunta correctamente al servidor (192.168.68.100).
+- **Estado:** Listo para despliegue y recarga de Nginx.
