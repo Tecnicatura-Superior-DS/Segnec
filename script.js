@@ -60,11 +60,15 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.innerHTML = 'Enviando...';
 
             const formData = new FormData(form);
+            const data = Object.fromEntries(formData.entries());
 
             try {
-                const response = await fetch('contacto.php', {
+                const response = await fetch('/api/contacto', {
                     method: 'POST',
-                    body: formData
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
                 });
 
                 const result = await response.json();

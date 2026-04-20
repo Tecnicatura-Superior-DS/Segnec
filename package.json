@@ -1,0 +1,16 @@
+{
+  "name": "segnec-web",
+  "version": "1.0.0",
+  "description": "Sitio web oficial de Segnec",
+  "main": "index.html",
+  "scripts": {
+    "start": "vercel dev",
+    "deploy": "vercel --prod"
+  },
+  "dependencies": {
+    "resend": "^3.2.0"
+  },
+  "devDependencies": {
+    "vercel": "^34.2.0"
+  }
+}
