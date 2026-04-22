@@ -15,7 +15,7 @@ export default async function handler(req, res) {
 
   try {
     const data = await resend.emails.send({
-      from: 'Web Segnec <onboarding@resend.dev>', // Se recomienda configurar el dominio propio en Resend después
+      from: 'Segnec Web <consultas@segnec.com.ar>',
       to: ['info@segnec.com.ar'],
       subject: 'Nueva consulta desde la web Segnec',
       reply_to: email,
