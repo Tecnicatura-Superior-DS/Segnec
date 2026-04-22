@@ -84,9 +84,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             } catch (error) {
                 console.error('Error:', error);
-                btn.textContent = '❌ Reintentar';
+                btn.textContent = '❌ Error';
                 btn.style.background = 'var(--error, #f44336)';
-                alert('Hubo un error al enviar tu consulta. Por favor, intentá nuevamente o contactanos directamente por WhatsApp.');
+                
+                let errorMsg = 'Hubo un error al enviar tu consulta.';
+                if (error.message.includes('API Key')) {
+                    errorMsg = 'Error de configuración: falta la API Key de Resend en Vercel.';
+                } else if (error.message.includes('Resend')) {
+                    errorMsg = 'El servidor de correos (Resend) rechazó el envío. Verificá si el dominio está validado.';
+                }
+
+                alert(`${errorMsg}\n\nPor favor, intentá nuevamente o contactanos directamente por WhatsApp.`);
             } finally {
                 // Reset button after 5 seconds
                 setTimeout(() => {
