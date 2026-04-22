@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     form.reset();
                 } else {
                     // Error from server
-                    throw new Error(result.message || 'Error en el servidor');
+                    throw new Error(result.details || result.message || 'Error en el servidor');
                 }
             } catch (error) {
                 console.error('Error:', error);
@@ -90,8 +90,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 let errorMsg = 'Hubo un error al enviar tu consulta.';
                 if (error.message.includes('API Key')) {
                     errorMsg = 'Error de configuración: falta la API Key de Resend en Vercel.';
-                } else if (error.message.includes('Resend')) {
-                    errorMsg = 'El servidor de correos (Resend) rechazó el envío. Verificá si el dominio está validado.';
+                } else {
+                    errorMsg = `El servidor devolvió el siguiente error: \n\n"${error.message}"`;
                 }
 
                 alert(`${errorMsg}\n\nPor favor, intentá nuevamente o contactanos directamente por WhatsApp.`);
