@@ -1,8 +1,8 @@
-import { Resend } from 'resend';
+const { Resend } = require('resend');
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-export default async function handler(req, res) {
+module.exports = async function handler(req, res) {
   // Solo permitir POST
   if (req.method !== 'POST') {
     return res.status(405).json({ status: 'error', message: 'Método no permitido' });
@@ -36,7 +36,7 @@ export default async function handler(req, res) {
     });
 
     if (error) {
-      console.error('Error de Resend:', error);
+      console.error('Error de Resend:', JSON.stringify(error));
       return res.status(400).json({ 
         status: 'error', 
         message: 'Resend no pudo enviar el email',
@@ -44,15 +44,15 @@ export default async function handler(req, res) {
       });
     }
 
-    console.log('Email enviado con éxito:', data);
+    console.log('Email enviado con éxito. ID:', data?.id);
     return res.status(200).json({ status: 'success', data });
 
   } catch (err) {
-    console.error('Excepción al enviar email:', err);
+    console.error('Excepción al enviar email:', err.message);
     return res.status(500).json({ 
       status: 'error', 
       message: 'Error interno al procesar el envío',
       details: err.message
     });
   }
-}
+};
