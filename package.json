@@ -1,6 +1,7 @@
 {
   "name": "segnec-web",
   "version": "1.0.0",
+  "type": "module",
   "description": "Sitio web oficial de Segnec",
   "main": "index.html",
   "scripts": {
