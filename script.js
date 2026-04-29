@@ -47,30 +47,56 @@ document.addEventListener('DOMContentLoaded', () => {
         animateOnScroll.observe(el);
     });
 
-    /* ─── Contact form: submission via WhatsApp ─── */
+    /* ─── Contact form: submission via Formspree ─── */
     const form = document.getElementById('contactForm');
     if (form) {
-        form.addEventListener('submit', e => {
+        form.addEventListener('submit', async e => {
             e.preventDefault();
+            const btn = document.getElementById('submit-form-btn');
+            const originalText = btn.innerHTML;
+            
+            // UI Feedback: Enviando...
+            btn.disabled = true;
+            btn.innerHTML = 'Enviando...';
 
             const formData = new FormData(form);
-            const data = Object.fromEntries(formData.entries());
-            
-            const { nombre, email, telefono, mensaje } = data;
-            
-            let text = `Hola Segnec, mi nombre es ${nombre}.\n`;
-            text += `Email: ${email}\n`;
-            if (telefono) {
-                text += `Teléfono: ${telefono}\n`;
-            }
-            text += `\nMensaje:\n${mensaje}`;
 
-            const waUrl = `https://wa.me/5492235310222?text=${encodeURIComponent(text)}`;
-            
-            // Abrir WhatsApp en una nueva pestaña
-            window.open(waUrl, '_blank');
-            
-            form.reset();
+            try {
+                // REEMPLAZAR LA URL DE ABAJO POR LA QUE TE DA FORMSPREE (ej. https://formspree.io/f/xabcdefg)
+                const response = await fetch('https://formspree.io/f/TU_ID_AQUI', {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    // UI Feedback: Éxito
+                    btn.textContent = '✅ ¡Mensaje enviado!';
+                    btn.style.background = 'var(--green)';
+                    form.reset();
+                } else {
+                    const data = await response.json();
+                    if (Object.hasOwn(data, 'errors')) {
+                        throw new Error(data["errors"].map(error => error["message"]).join(", "));
+                    } else {
+                        throw new Error('Error al enviar el formulario');
+                    }
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                btn.textContent = '❌ Error';
+                btn.style.background = 'var(--error, #f44336)';
+                alert(`Hubo un error al enviar tu consulta: ${error.message}\n\nPor favor, contactanos directamente por WhatsApp.`);
+            } finally {
+                // Restaurar botón después de 5 segundos
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                    btn.style.background = '';
+                    btn.disabled = false;
+                }, 5000);
+            }
         });
     }
 
