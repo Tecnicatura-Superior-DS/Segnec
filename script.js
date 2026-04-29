@@ -62,8 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const formData = new FormData(form);
 
             try {
-                // REEMPLAZAR LA URL DE ABAJO POR LA QUE TE DA FORMSPREE (ej. https://formspree.io/f/xabcdefg)
-                const response = await fetch('https://formspree.io/f/TU_ID_AQUI', {
+                const response = await fetch('https://formspree.io/f/meevylkg', {
                     method: 'POST',
                     body: formData,
                     headers: {
