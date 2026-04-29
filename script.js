@@ -47,62 +47,45 @@ document.addEventListener('DOMContentLoaded', () => {
         animateOnScroll.observe(el);
     });
 
-    /* ─── Contact form: actual submission via PHP ─── */
+    /* ─── Contact form: submission via WhatsApp ─── */
     const form = document.getElementById('contactForm');
     if (form) {
-        form.addEventListener('submit', async e => {
+        form.addEventListener('submit', e => {
             e.preventDefault();
             const btn = document.getElementById('submit-form-btn');
             const originalText = btn.innerHTML;
             
-            // UI Feedback: Sending...
             btn.disabled = true;
-            btn.innerHTML = 'Enviando...';
+            btn.innerHTML = 'Redirigiendo...';
 
             const formData = new FormData(form);
             const data = Object.fromEntries(formData.entries());
-
-            try {
-                const response = await fetch('/api/contacto', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(data)
-                });
-
-                const result = await response.json();
-
-                if (result.status === 'success') {
-                    // Success UI
-                    btn.textContent = '✅ ¡Mensaje enviado!';
-                    btn.style.background = 'var(--green)';
-                    form.reset();
-                } else {
-                    // Error from server
-                    throw new Error(result.details || result.message || 'Error en el servidor');
-                }
-            } catch (error) {
-                console.error('Error:', error);
-                btn.textContent = '❌ Error';
-                btn.style.background = 'var(--error, #f44336)';
-                
-                let errorMsg = 'Hubo un error al enviar tu consulta.';
-                if (error.message.includes('API Key')) {
-                    errorMsg = 'Error de configuración: falta la API Key de Resend en Vercel.';
-                } else {
-                    errorMsg = `El servidor devolvió el siguiente error: \n\n"${error.message}"`;
-                }
-
-                alert(`${errorMsg}\n\nPor favor, intentá nuevamente o contactanos directamente por WhatsApp.`);
-            } finally {
-                // Reset button after 5 seconds
-                setTimeout(() => {
-                    btn.innerHTML = originalText;
-                    btn.style.background = '';
-                    btn.disabled = false;
-                }, 5000);
+            
+            const { nombre, email, telefono, mensaje } = data;
+            
+            let text = `Hola Segnec, mi nombre es ${nombre}.\n`;
+            text += `Email: ${email}\n`;
+            if (telefono) {
+                text += `Teléfono: ${telefono}\n`;
             }
+            text += `\nMensaje:\n${mensaje}`;
+
+            const waUrl = `https://wa.me/5492235310222?text=${encodeURIComponent(text)}`;
+            
+            // Abrir WhatsApp en una nueva pestaña
+            window.open(waUrl, '_blank');
+
+            // Success UI
+            btn.textContent = '✅ ¡Redirigido a WhatsApp!';
+            btn.style.background = 'var(--green)';
+            form.reset();
+
+            // Reset button after 5 seconds
+            setTimeout(() => {
+                btn.innerHTML = originalText;
+                btn.style.background = '';
+                btn.disabled = false;
+            }, 5000);
         });
     }
 
