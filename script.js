@@ -52,11 +52,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (form) {
         form.addEventListener('submit', e => {
             e.preventDefault();
-            const btn = document.getElementById('submit-form-btn');
-            const originalText = btn.innerHTML;
-            
-            btn.disabled = true;
-            btn.innerHTML = 'Redirigiendo...';
 
             const formData = new FormData(form);
             const data = Object.fromEntries(formData.entries());
@@ -74,18 +69,8 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // Abrir WhatsApp en una nueva pestaña
             window.open(waUrl, '_blank');
-
-            // Success UI
-            btn.textContent = '✅ ¡Redirigido a WhatsApp!';
-            btn.style.background = 'var(--green)';
+            
             form.reset();
-
-            // Reset button after 5 seconds
-            setTimeout(() => {
-                btn.innerHTML = originalText;
-                btn.style.background = '';
-                btn.disabled = false;
-            }, 5000);
         });
     }
 
